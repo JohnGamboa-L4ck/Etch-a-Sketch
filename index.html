@@ -2,11 +2,83 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Etch A Sketch</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-
+        <div id = "title">
+            <h1>Etch A Sketch</h1>
+            <p id = "subTitle">onmousedown</p>
+        </div>
+        <div id = "settingContainer" class = "hidden">
+            <div class="slideContainer">
+                <p>Grid: 
+                    <input type="range" min="2" max="100" value="16" class="slider" id="rangeSlider">
+                    <span id = "gridX"></span> x <input type = "number" id="gridInput" 
+                    min="2" max="100">
+                </p>
+            </div>
+            <div id = "borderSetting">
+                <div>
+                    <label for = "btnPixelBorder">Screen Borders: </label>
+                    <button id = "btnPixelBorder">
+                        <span class="material-icons" id = "borderOn">border_all</span>
+                        <span class="material-icons hidden" id = "borderOff">border_clear</span>
+                    </button>
+                </div>
+            </div>
+            <div id = "paletteContainer">
+                <div>
+                    <label for = "btnBlack">Black: </label>
+                    <button id = "btnBlack" class = "paletteItem active" disabled>
+                        <span class="material-icons black">water_drop</span>
+                    </button>
+                </div>
+                <div>
+                    <label for = "btnRainbow">Rainbow: </label>
+                    <button id = "btnRainbow" class = "paletteItem">
+                        <span class="material-icons rainbow">water_drop</span>
+                    </button>
+                </div>
+                <div>
+                    <label for = "btnCustom">Custom: </label>
+                    <button id = "btnCustom" class = "paletteItem">
+                        <input type="color" id="inputCustomColor" value="#ff0000">
+                        <span class="material-icons" id = "spanCustomColor">water_drop</span>
+                    </button>
+                </div>
+                <div>
+                    <label for = "btnEraser">Eraser: </label>
+                    <button id = "btnEraser" class = "paletteItem">
+                        <span class="material-icons eraser">disabled_by_default</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id = "etch-a-sketch">
+            <div id = "screen"></div>
+            <div id = "knobs">
+                <button class = "knob" id = "btnSetting">
+                    <span class="material-icons gmIcon rainbow">settings</span>
+                    <!-- <span class="material-icons">palette</span> -->
+                </button>
+                <!-- disable the button below if there are no changes in screen -->
+                <button class = "knob" id = "btnClear">
+                    <span class="material-icons gmIcon opacity8">vibration</span>
+                    <span id = "spanText-clear">X</span>
+                </button>
+            </div>
+        </div>
+        <div>
+            <footer>
+                <p>Created by: <a href = "https://github.com/JohnGamboa-L4ck">L4ck</a></p>
+            </footer>
+        </div>
     </body>
     <script src="scripts.js"></script>
 </html>
